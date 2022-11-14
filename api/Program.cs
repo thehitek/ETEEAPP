@@ -1,3 +1,5 @@
+
+using Microsoft.AspNetCore.HttpOverrides;
 namespace api
 {
     public class Program
@@ -22,8 +24,14 @@ namespace api
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
+
+            app.UseAuthentication();
             app.UseAuthorization();
 
 

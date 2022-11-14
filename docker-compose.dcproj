@@ -13,6 +13,7 @@
     <None Include=".dockerignore" />
     <None Include="nginx\beyondgodlike.ru.conf" />
     <None Include="nginx\Dockerfile" />
+    <None Include="nginx\localhost.conf" />
     <None Include="nginx\nginx.conf" />
   </ItemGroup>
 </Project>
