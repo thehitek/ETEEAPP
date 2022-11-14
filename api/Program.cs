@@ -24,8 +24,6 @@ namespace api
                 app.UseSwaggerUI();
             }
 
-            //app.UseHttpsRedirection();
-
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
                 ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto

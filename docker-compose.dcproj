@@ -15,5 +15,8 @@
     <None Include="nginx\Dockerfile" />
     <None Include="nginx\localhost.conf" />
     <None Include="nginx\nginx.conf" />
+    <None Include="nginx\ssl\beyondgodlike.ru.crt" />
+    <None Include="nginx\ssl\beyondgodlike.ru.key" />
+    <None Include="nginx\ssl\ca.crt" />
   </ItemGroup>
 </Project>
