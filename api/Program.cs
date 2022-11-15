@@ -29,6 +29,8 @@ namespace api
                 ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
             });
 
+            app.UseWelcomePage();
+
             app.UseAuthentication();
             app.UseAuthorization();
 
