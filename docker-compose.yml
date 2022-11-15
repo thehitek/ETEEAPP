@@ -7,14 +7,13 @@ services:
       context: .
       dockerfile: api/Dockerfile
     environment:
-    # - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_ENVIRONMENT=Production
+    #  - ASPNETCORE_ENVIRONMENT=Development
+     - ASPNETCORE_ENVIRONMENT=Production
 
       - ASPNETCORE_URLS=http://+:8000
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-    restart: unless-stopped
 
   nginx:
     build:
