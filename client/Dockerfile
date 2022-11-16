@@ -1,9 +1,9 @@
-FROM node:16.17-alpine
+FROM node:16-alpine
 WORKDIR /app
 
 EXPOSE 3000
 
 COPY . .
-RUN npm run build
+RUN yarn install --production
 
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
