@@ -8,19 +8,21 @@ services:
       dockerfile: api/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:8000 #;http://+:8001
+      - ASPNETCORE_URLS=http://+:8000
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-    restart: unless-stopped
+    #restart: unless-stopped
 
   client:
     image: client
     build:
       context: ./client
       dockerfile: Dockerfile
-    restart: unless-stopped
-
+    #restart: unless-stopped
+    depends_on:
+      - api
+  
   nginx:
     build:
       context: ./nginx
@@ -28,6 +30,6 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    restart: unless-stopped
+    #restart: unless-stopped
     depends_on:
      - api
